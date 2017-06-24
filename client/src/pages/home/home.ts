@@ -18,4 +18,12 @@ export class HomePage {
     })
   }
 
+  postQuote(){
+    this.homeService.postQuote(this.quote);
+
+  }
+  quote = {
+    message: ""
+  }
+
 }

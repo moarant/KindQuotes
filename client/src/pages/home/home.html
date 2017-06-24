@@ -7,9 +7,20 @@
 </ion-header>
 
 <ion-content padding>
+
+    <form (ngSubmit)="postQuote()">
+      <ion-item>
+        <ion-input type="text" placeholder= "Give us a kind quote!" [(ngModel)]="quote.message" name="quote"></ion-input>
+      </ion-item>
+
+      <button ion-button type="submit" block>Submit</button>
+    </form>
+
+
   <ion-list>
     <ion-item *ngFor="let quote of quotes">
       <div>{{quote.message}}</div>
     </ion-item>
   </ion-list>
+  
 </ion-content>
