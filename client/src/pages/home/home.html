@@ -10,7 +10,8 @@
 
     <form (ngSubmit)="postQuote()">
       <ion-item>
-        <ion-input type="text" placeholder= "Give us a kind quote!" [(ngModel)]="quote.message" name="quote"></ion-input>
+        <ion-input type="text" placeholder= "Give us a kind quote!" [(ngModel)]="quote.message" 
+        name="quote"></ion-input>
       </ion-item>
 
       <button ion-button type="submit" block>Submit</button>
@@ -20,6 +21,8 @@
   <ion-list>
     <ion-item *ngFor="let quote of quotes">
       <div>{{quote.message}}</div>
+      <button ion-button color="danger" (click)= "deleteQuote(quote.id)">Delete</button>
+      <button ion-button color= "secondary">Edit</button>
     </ion-item>
   </ion-list>
   
