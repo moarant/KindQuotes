@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import {HomeService} from './homeService';
 import {Http} from '@angular/http';
+import { EditAQuotePage } from "../edit-a-quote/edit-a-quote";
 
 @Component({
   selector: 'page-home',
@@ -46,6 +47,15 @@ export class HomePage {
    });
    
     
+  }
+
+  updateQuote(id: Number){
+    this.navCtrl.push(EditAQuotePage, {quoteId: id})
+    console.log(id+ " pushed");
+  }
+
+  ionViewWillEnter(){
+    this.getQuotes();
   }
 
  

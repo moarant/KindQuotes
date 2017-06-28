@@ -22,7 +22,7 @@
     <ion-item *ngFor="let quote of quotes">
       <div>{{quote.message}}</div>
       <button ion-button color="danger" (click)= "deleteQuote(quote.id)">Delete</button>
-      <button ion-button color= "secondary">Edit</button>
+      <button ion-button color= "secondary"(click)="updateQuote(quote.id)">Edit</button>
     </ion-item>
   </ion-list>
   
